@@ -1,0 +1,27 @@
+# --- Secrets & Config ---
+.env
+*.env
+api_key.txt
+secrets.json
+yasm-ai-backup.zip
+
+# --- Python & Virtual Envs ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.virtualenvs/
+my-env/
+
+# --- Django Specific ---
+db.sqlite3
+media/
+staticfiles/
+.DS_Store
+
+# --- PythonAnywhere Specific ---
+.pythonanywhere/
+*_pythonanywhere_com_wsgi.py
+.local/
+.cache/

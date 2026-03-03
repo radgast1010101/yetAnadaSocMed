@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yet_another_socmed_ai_V.1.</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="
+    background-color: #0d0208;
+">
+    <!-- top part -->
+    <h1>> SYSTEM_FEED_ACTIVE</h1>
+    <h2>>> SOCMED WITH A.I.</h2>
+
+
+    {% if user.is_authenticated %}
+      <form method="post"> {% csrf_token %}
+        <input name="text" placeholder="ENTER_STATUS..." required size="40">
+        <button type="submit">[EXECUTE_POST]</button>
+      </form>
+    {% else %}
+  <p>UNAUTHORIZED ACCESS.</p>
+  <p>
+    <a href="/admin/login/">[LOGIN_EXISTING]</a> |
+    <a href="{% url 'signup' %}">[CREATE_NEW_IDENTITY]</a>
+  </p>
+    {% endif %}
+
+
+
+
+
+    <hr>
+    <!-- ai part -->
+    <button onclick="handleSummarize('{{ all_content_blob|escapejs }}')">
+      eavesdrop with AI
+    </button>
+    <div id="ai-summary" style="color: lightgreen; font-style: italic;"></div>
+    <!-- end of ai part -->
+
+    <!-- posts/feed part -->
+    {% for post in posts %}
+      <div class="post">
+        <span class="username">@{{ post.user.username }}</span>
+        <p>{{ post.text }}</p>
+        <span class="timestamp">RECEIVED: {{ post.created_at|date:"Y-m-d H:i" }}</span>
+      </div>
+    {% endfor %}
+    <!-- end of posts/feed part -->
+
+
+
+    <!-- bottom part -->
+
+    <nav style="text-align: right; margin-bottom: 20px;">
+    {% if user.is_authenticated %}
+        <span>LOGGED_IN_AS: {{ user.username }}</span> |
+        <a href="{% url 'dashboard' %}">[DASHBOARD]</a> |
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; color:#00ff41; text-decoration:underline; cursor:pointer; padding:0; font-family:inherit;">[TERMINATE_SESSION]</button>
+        </form>
+    {% else %}
+        <a href="{% url 'signup' %}">[INITIALIZE_NEW_IDENTITY]</a> |
+        <a href="/admin/login/">[LOGIN]</a>
+    {% endif %}
+    </nav>
+
+
+<script>
+async function handleSummarize(text) {
+    document.getElementById('ai-summary').innerText = "eavesdropping...";
+
+    const response = await fetch('/summarize-api/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: text })
+    });
+
+    const data = await response.json();
+    document.getElementById('ai-summary').innerText = data.summary;
+}
+</script>
+
+</body>
+</html>

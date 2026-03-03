@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TERMINAL_SIGNUP</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="
+    background-color: #0d0208;
+">
+    <h1>> INITIALIZE_NEW_USER</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">[REGISTER_IDENTITY]</button>
+    </form>
+
+    <br>
+    <a href="{% url 'feed' %}">< [RETURN_TO_FEED]</a>
+</body>
+</html>

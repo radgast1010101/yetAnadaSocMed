@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TERMINAL_DASHBOARD</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="
+    background-color: #0d0208;
+">
+    <h1>> USER_ARCHIVE: {{ user.username }}</h1>
+
+    <p><a href="{% url 'feed' %}">< [BACK_TO_GLOBAL_FEED]</a></p>
+
+    <hr>
+    <h3>YOUR_TRANSMISSIONS:</h3>
+    {% for post in posts %}
+      <div class="post">
+        <p>{{ post.text }}</p>
+        <span class="timestamp">SENT: {{ post.created_at }}</span>
+      </div>
+    {% empty %}
+      <p>NO DATA FOUND IN ARCHIVE.</p>
+    {% endfor %}
+</body>
+</html>

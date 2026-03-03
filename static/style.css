@@ -1,0 +1,135 @@
+/* Terminal Style Social Media
+body {
+    background-color: #0d0208;
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    border-bottom: 2px solid #00ff41;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+input, button {
+    background: #003b00;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 10px;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #00ff41;
+    color: #0d0208;
+    cursor: pointer;
+}
+
+
+.post {
+    border-left: 3px solid #00ff41;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.username {
+    color: #008f11;
+    text-decoration: underline;
+}
+
+.timestamp {
+    color: #003b00;
+    font-size: 0.8rem;
+}
+
+a {
+    color: #00ff41;
+}
+*/
+
+
+/* the 80s neons */
+
+/* 80s Cyber-Neon Style */
+body {
+    background-color: #0d0208; /* Deepest Black/Purple */
+    color: #00f3ff;           /* Neon Cyan */
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Retro CRT Scanline Effect */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+}
+
+h1 {
+    color: #ff00ff; /* Hot Pink */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    border-bottom: 2px solid #00f3ff;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Form Styling */
+input {
+    background: #1a1a1a;
+    border: 1px solid #00f3ff;
+    color: #00f3ff;
+    padding: 10px;
+    box-shadow: inset 0 0 5px #00f3ff;
+}
+
+button {
+    background: #ff00ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+/* Post Styling */
+.post {
+    border: 1px solid #bc13fe; /* Neon Purple */
+    padding: 15px;
+    margin-bottom: 25px;
+    background: rgba(188, 19, 254, 0.05);
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+}
+
+.username {
+    color: #ff00ff;
+    font-weight: bold;
+}
+
+.timestamp {
+    color: #00f3ff;
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+a {
+    color: #39ff14; /* Neon Green */
+    text-decoration: none;
+    text-shadow: 0 0 5px #39ff14;
+}
+
+a:hover {
+    text-decoration: underline;
+}
