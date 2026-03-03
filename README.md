@@ -1,4 +1,4 @@
-# README --> yetAnadaSocMed ai project
+# README yetAnadaSocMed ai project
 
 1. Pull Code to PythonAnywhere
 Open a Bash Console on PythonAnywhere (at root e.g. /home/your-site-name/) and clone your repo:
@@ -11,11 +11,12 @@ cd yetAnadaSocMed
 2. Setup the Environment (if, not yet started/set)
 Create a virtual environment so your Gemini libraries don't break:
 
-Bash
+(at Bash)
 Create the environment
 mkvirtualenv my-env --python=/usr/bin/python3.10
 
 Install the libraries (at  /home/your-site-name/yetAnadaSocMed/ where manage.py file is)
+
 (at Bash)
 pip install -r requirements.txt
 
@@ -30,10 +31,10 @@ Virtualenv: my-env (Just type the name you gave it)
 Since we ignored the .env file, you need to tell PythonAnywhere your Gemini Key.
 
 add your keys at /home/your-site-name/yetAnadaSocMed/yetAnadaSocMed/settings.py below
-// SECURITY WARNING: keep the secret key used in production secret!
+- SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "<YOUR_SECRET_KEY_HERE>" <-- add pythonanywhere secret key
 
-// AI, might cause 500 error if none
+- AI, might cause 500 error if none
 GEMINI_API_KEY="<YOUR_GEMINI_API_KEY>" <-- register and add gemini api key at google ai studio
 
 6. Database & Static Files
@@ -47,7 +48,7 @@ python manage.py collectstatic
 
 for more info...
 
-// vim: set ft=rst:
+- vim: set ft=rst:
 See https://help.pythonanywhere.com/ (or click the "Help" link at the top
 right) for help on how to use PythonAnywhere, including tips on copying and
 pasting from consoles, and writing your own web applications.
