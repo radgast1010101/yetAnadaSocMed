@@ -49,8 +49,10 @@ AI, might cause 500 error if none
 Back in the Bash Console, run your migrations:
 
 (at Bash)
+```
 python manage.py migrate
 python manage.py collectstatic
+```
 
 ---
 
